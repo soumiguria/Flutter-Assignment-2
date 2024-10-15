@@ -56,7 +56,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: Colors.amber),
                     ),
                     onTap: () {
                       Navigator.push(
