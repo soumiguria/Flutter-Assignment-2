@@ -40,13 +40,11 @@ Welcome to the **Webtoon Explorer App**! This Flutter-based mobile application a
 
 ## Navigate to the project directory:
 
-    ```bash
+```bash
     cd Flutter-Assignment-2
-
     flutter pub get
-
     flutter run
-    ```
+```   
 
 ## Technologies Used
 
