@@ -29,6 +29,14 @@ Welcome to the **Webtoon Explorer App**! This Flutter-based mobile application a
    - The user's rating and the average rating are both stored locally using SharedPreferences.
 
 ## Screenshots
+![Ratings added](https://github.com/user-attachments/assets/63ab238d-dcb6-4c90-b129-4e9f6a0d7da1)
+![Webtoon Genres](https://github.com/user-attachments/assets/f4c45c7e-abe0-4fef-aac8-441d58b35fb9)
+![Details Screen](https://github.com/user-attachments/assets/3fc7b8ae-a5f7-4d92-901a-4b0efd9c48c1)
+![Favourites Screen](https://github.com/user-attachments/assets/ba5b988d-881d-46e6-b63c-db497a0dcbaa)
+![Added to Favourites](https://github.com/user-attachments/assets/fe0e38dd-d2f4-4a2a-b2d5-861683ccf869)
+![Details](https://github.com/user-attachments/assets/173e2078-d131-4f98-b8be-3058b4d87986)
+![Animated Genre screen](https://github.com/user-attachments/assets/cbec8e26-a530-4cac-9876-7f156c491181)
+![Tower of God](https://github.com/user-attachments/assets/90bc437e-a1c6-4821-bc6b-27b1d67a2b4c)
 
 
 
