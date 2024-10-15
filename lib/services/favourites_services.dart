@@ -6,12 +6,11 @@ class FavoritesService {
     List<String>? favorites = prefs.getStringList('favorites') ?? [];
 
     if (!favorites.contains(webtoon['title'])) {
-      favorites.add(webtoon['title']!); // Use the title for storing
+      favorites.add(webtoon['title']!);
     }
 
     await prefs.setStringList('favorites', favorites);
 
-    // Save webtoon details separately
     await prefs.setString(webtoon['title']!, webtoon['image']!);
   }
 
@@ -30,22 +29,29 @@ class FavoritesService {
     return favoriteItems;
   }
 
-  // Store the rating for a specific webtoon
   static Future<void> addRating(String title, double rating) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble('rating_$title', rating); // Store the rating by title
+    await prefs.setDouble('rating_$title', rating);
   }
 
-  // Retrieve the user's rating for a specific webtoon
   static Future<double> getUserRating(String title) async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getDouble('rating_$title') ??
-        0.0; // Return 0 if no rating exists
+    return prefs.getDouble('rating_$title') ?? 0.0;
   }
 
-  // Retrieve the average rating for a webtoon (for now, it's based only on the user's local rating)
+  static Future<void> setAverageRating(
+      String title, double averageRating) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble('average_rating_$title', averageRating);
+  }
+
   static Future<double> getAverageRating(String title) async {
-    // This is a placeholder since average rating from multiple users is not stored
-    return await getUserRating(title);
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getDouble('average_rating_$title') ?? 0.0;
+  }
+
+  static Future<void> updateRatings(String title, double userRating) async {
+    await addRating(title, userRating);
+    await setAverageRating(title, userRating);
   }
 }

@@ -18,20 +18,24 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   void initState() {
     super.initState();
-    _loadAverageRating();
+    _loadRatings();
   }
 
-  Future<void> _loadAverageRating() async {
+  Future<void> _loadRatings() async {
+    double userRating =
+        await FavoritesService.getUserRating(widget.webtoon['title']!);
     double averageRating =
         await FavoritesService.getAverageRating(widget.webtoon['title']!);
+
     setState(() {
+      _currentRating = userRating;
       _averageRating = averageRating;
     });
   }
 
   Future<void> _rateWebtoon(double rating) async {
-    await FavoritesService.addRating(widget.webtoon['title']!, rating);
-    await _loadAverageRating();
+    await FavoritesService.updateRatings(widget.webtoon['title']!, rating);
+    await _loadRatings();
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text('You rated ${widget.webtoon['title']} $rating stars!'),
     ));
@@ -55,7 +59,6 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             ElevatedButton(
               onPressed: () async {
-                // Add the webtoon to favorites
                 await FavoritesService.addToFavorites({
                   'title': widget.webtoon['title']!,
                   'image': widget.webtoon['image']!,
@@ -88,7 +91,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 setState(() {
                   _currentRating = rating;
                 });
-                _rateWebtoon(rating); // Store the rating and update the average
+                _rateWebtoon(rating);
               },
             ),
             SizedBox(height: 10),

@@ -47,7 +47,10 @@ class WebtoonsListScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('$genre Webtoons'),
+        title: Text(
+          '$genre Webtoons',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
       ),

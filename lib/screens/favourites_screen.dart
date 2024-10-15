@@ -56,7 +56,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                          color: Colors.white),
                     ),
                     onTap: () {
                       Navigator.push(
@@ -71,7 +71,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 );
               },
             ),
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
     );
   }
 }

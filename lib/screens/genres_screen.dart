@@ -236,7 +236,12 @@ class _GenresScreenState extends State<GenresScreen>
                     ),
                   );
                 },
-                child: Text('View Favorites'),
+                child: Text(
+                  'View Favorites',
+                  style: TextStyle(color: Colors.white),
+                ),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurple),
               ),
             ),
           ),
